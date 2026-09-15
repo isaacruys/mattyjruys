@@ -2,26 +2,31 @@
 // No need to touch any component code for day-to-day updates.
 
 export const artist = {
-  name: "Artist Name",
-  tagline: "Musician",
+  name: "Matty J. Ruys",
   email: "contact@example.com",
-  location: "City Name",
+  location: "Melbourne, AU",
 };
 
 export const socials = [
-  { label: "Instagram", url: "https://instagram.com/" },
-  { label: "Spotify", url: "https://open.spotify.com/" },
-  { label: "Apple Music", url: "https://music.apple.com/" },
-  { label: "Bandcamp", url: "https://bandcamp.com/" },
-  { label: "YouTube", url: "https://youtube.com/" },
+  { label: "Instagram", url: "https://www.instagram.com/mattyjruys/" },
+  {
+    label: "Spotify",
+    url: "https://open.spotify.com/artist/1sFQmEAQurCDEHqKV6aSnK?si=LANd-AyQQaCANdp9wmxsHw",
+  },
+  {
+    label: "Apple Music",
+    url: "https://music.apple.com/au/artist/matty-j-ruys/1737335151",
+  },
+  { label: "Deezer", url: "https://www.deezer.com/us/artist/4732822" },
+  { label: "YouTube", url: "https://www.youtube.com/@mattyjruys" },
 ];
 
 export const featuredRelease = {
-  title: "IT'S OKAY, I'M NOT OKAY Part. 1 (feat. 7HOODIES)",
-  releaseDate: "10 July 2026",
-  coverImage: "/itsokayimnotokaypt1.jpeg", // put an image in /public
+  title: "SAME SUN (feat. MATTHEW LITTLE)",
+  releaseDate: "11 September 2026",
+  coverImage: "/samesun.jpeg", // put an image in /public
   streamUrl:
-    "https://distrokid.com/hyperfollow/mattyjruys/its-okay-im-not-okay-part-1-feat-7hoodies", // pre-save/smart-link service
+    "https://distrokid.com/hyperfollow/mattyjruys/same-sun-feat-matthew-little-radio-edit-2?ref=release", // pre-save/smart-link service
 };
 
 export const tourDates = [
@@ -39,25 +44,35 @@ export const tourDates = [
 
 export const discography = [
   {
+    title: "IT'S OKAY, I'M NOT OKAY Part. 1 (feat. 7HOODIES)",
+    year: "2026",
+    label: "",
+    coverImage: "/itsokayimnotokaypt1.jpeg",
+    hyperfollowUrl:
+      "https://distrokid.com/hyperfollow/mattyjruys/its-okay-im-not-okay-part-1-feat-7hoodies", // e.g. Apple Music or Spotify embed URL
+  },
+  {
     title: "SOMETHING GOOD",
     year: "2026",
     label: "",
     coverImage: "/somethinggood.jpeg",
-    embedUrl: "", // e.g. Apple Music or Spotify embed URL
+    hyperfollowUrl:
+      "https://distrokid.com/hyperfollow/mattyjruys/something-good?ref=release", // e.g. Apple Music or Spotify embed URL
   },
   {
     title: "BLACK JESUS",
     year: "2026",
     label: "",
     coverImage: "/blackjesus.jpeg",
-    embedUrl: "", // e.g. Apple Music or Spotify embed URL
+    hyperfollowUrl:
+      "https://distrokid.com/hyperfollow/mattyjruys/black-jesus?ref=release", // e.g. Apple Music or Spotify embed URL
   },
   {
     title: "DEEPER",
     year: "1995",
     label: "",
     coverImage: "/deeper.jpeg",
-    embedUrl: "", // e.g. Apple Music or Spotify embed URL
+    hyperfollowUrl: "", // e.g. Apple Music or Spotify embed URL
   },
 ];
 
@@ -85,15 +100,13 @@ export const videos = [
 ];
 
 export const galleryImages = [
-  // "/gallery/photo1.jpg",
-  // "/gallery/photo2.jpg",
+  "/gallery/MattyJMontage.jpeg",
+  "/gallery/hand.jpeg",
+  "/gallery/gostopgo.jpeg",
+  "/gallery/group.jpeg",
+  "/gallery/matty.jpeg",
+  "/gallery/speech.jpeg",
+  "/gallery/people.jpeg",
 ];
 
-export const merch = [
-  {
-    name: "T-Shirt",
-    price: "$25",
-    image: "/merch/shirt.jpg",
-    url: "https://example.com/store", // link out to Shopify/Bandcamp/Printful store
-  },
-];
+export const merch = [];

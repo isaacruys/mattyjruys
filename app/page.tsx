@@ -1,4 +1,6 @@
 import Nav from "./components/Nav";
+import Countdown from "./components/Countdown";
+import ListeningParty from "./components/ListeningParty.tsx";
 import FeaturedRelease from "./components/FeaturedRelease";
 import Tour from "./components/Tour";
 import Discography from "./components/Discography";
@@ -11,6 +13,8 @@ export default function Home() {
   return (
     <main>
       <Nav />
+      <Countdown />
+      <ListeningParty />
       <FeaturedRelease />
       <Tour />
       <Discography />
