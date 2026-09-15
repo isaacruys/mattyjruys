@@ -2,13 +2,13 @@ import { artist, socials } from "@/data/site-content";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="px-6 py-16 max-w-4xl mx-auto border-t border-ink/10">
+    <footer
+      id="contact"
+      className="px-6 py-16 max-w-4xl mx-auto border-t border-ink/10"
+    >
       <div className="flex flex-wrap justify-between gap-8">
         <div>
-          <a
-            href={`mailto:${artist.email}`}
-            className="text-sm uppercase tracking-wide underline hover:text-accent"
-          >
+          <a className="text-sm uppercase tracking-wide underline hover:text-accent">
             Contact
           </a>
         </div>

@@ -1,6 +1,6 @@
 import Nav from "./components/Nav";
 import Countdown from "./components/Countdown";
-import ListeningParty from "./components/ListeningParty.tsx";
+import ListeningParty from "./components/ListeningParty";
 import FeaturedRelease from "./components/FeaturedRelease";
 import Tour from "./components/Tour";
 import Discography from "./components/Discography";

@@ -32,7 +32,7 @@ export default function FeaturedRelease() {
           transition={{ delay: 0.3 }}
           className="text-xs uppercase tracking-widest text-ink/50 mb-4"
         >
-          {artist.tagline} — {featuredRelease.releaseDate}
+          {featuredRelease.releaseDate}
         </motion.p>
 
         <motion.h1

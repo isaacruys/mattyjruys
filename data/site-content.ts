@@ -3,7 +3,6 @@
 
 export const artist = {
   name: "Matty J. Ruys",
-  email: "contact@example.com",
   location: "Melbourne, AU",
 };
 
@@ -30,16 +29,8 @@ export const featuredRelease = {
 };
 
 export const tourDates = [
-  {
-    region: "",
-    shows: [],
-  },
-  {
-    region: "UK / EU",
-    shows: [
-      // add more shows here
-    ],
-  },
+  { region: "US / Canada", shows: [] },
+  { region: "UK / EU", shows: [] },
 ];
 
 export const discography = [
@@ -109,4 +100,11 @@ export const galleryImages = [
   "/gallery/people.jpeg",
 ];
 
-export const merch = [];
+type MerchItem = {
+  name: string;
+  price: string;
+  image: string;
+  url: string;
+};
+
+export const merch: MerchItem[] = [];
