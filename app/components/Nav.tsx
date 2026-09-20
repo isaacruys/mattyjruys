@@ -1,11 +1,12 @@
 const links = [
-  { href: "#release", label: "Music" },
-  { href: "#tour", label: "Tour" },
-  { href: "#discography", label: "Discography" },
-  { href: "#videos", label: "Videos" },
-  { href: "#merch", label: "Store" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/#release", label: "Music" },
+  { href: "/#tour", label: "Tour" },
+  { href: "/#discography", label: "Discography" },
+  { href: "/#videos", label: "Videos" },
+  { href: "/#merch", label: "Store" },
+  { href: "/#gallery", label: "Gallery" },
 ];
 
 export default function Nav() {

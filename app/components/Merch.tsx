@@ -13,7 +13,7 @@ export default function Merch() {
           <div className="w-full max-w-xs">
             <div className="relative w-full aspect-square mb-4">
               <Image
-                src="/vinyl.jpeg"
+                src="/vinyl-teaser.jpg"
                 alt="Vinyl coming soon"
                 fill
                 className="object-cover"
@@ -24,27 +24,29 @@ export default function Merch() {
             </p>
           </div>
         ) : (
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 text-left w-full">
+          <div className="flex flex-wrap justify-end gap-8 w-full">
             {merch.map((item) => (
               <a
                 key={item.name}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group w-full max-w-xs text-left"
               >
-                <div className="relative aspect-square mb-3 bg-ink/5">
+                <div className="relative aspect-square mb-3 bg-ink/5 flex items-center justify-center overflow-hidden">
                   {item.image && (
                     <Image
                       src={item.image}
                       alt={item.name}
                       fill
-                      className="object-cover group-hover:opacity-80 transition-opacity"
+                      className="object-contain group-hover:opacity-80 transition-opacity"
                     />
                   )}
                 </div>
                 <p className="text-sm">{item.name}</p>
-                <p className="text-sm text-ink/60">{item.price}</p>
+                {item.price && (
+                  <p className="text-sm text-ink/60">{item.price}</p>
+                )}
               </a>
             ))}
           </div>

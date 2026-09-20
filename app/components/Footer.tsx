@@ -4,49 +4,26 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="px-6 py-16 max-w-4xl mx-auto border-t border-ink/10"
+      className="px-6 py-24 max-w-4xl mx-auto border-t border-ink/10"
     >
-      <div className="flex flex-wrap justify-between gap-8">
-        <div>
-          <a className="text-sm uppercase tracking-wide underline hover:text-accent">
-            Contact
-          </a>
-        </div>
-
-        <div>
-          {/* Swap this block for a Mailchimp/ConvertKit embed form */}
-          <p className="text-sm uppercase tracking-wide mb-2">Mailing List</p>
-          <form className="flex gap-2">
-            <input
-              type="email"
-              placeholder="Email address"
-              className="border border-ink/20 px-3 py-2 text-sm bg-transparent"
-            />
-            <button
-              type="submit"
-              className="border border-ink px-4 py-2 text-sm uppercase tracking-wide hover:bg-ink hover:text-paper transition-colors"
-            >
-              Join
-            </button>
-          </form>
-        </div>
-
-        <div className="flex flex-col gap-1">
+      <div className="flex justify-end">
+        <nav className="flex flex-col items-end gap-3">
           {socials.map((social) => (
             <a
               key={social.label}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm hover:text-accent"
+              className="group relative font-display text-xl md:text-2xl uppercase tracking-wide text-ink hover:text-accent transition-colors"
             >
               {social.label}
+              <span className="absolute -bottom-1 right-0 h-[1px] w-0 bg-accent transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-        </div>
+        </nav>
       </div>
 
-      <p className="mt-12 text-xs text-ink/40">
+      <p className="mt-16 text-xs uppercase tracking-widest text-ink/40 text-right">
         {artist.location} · {new Date().getFullYear()} © {artist.name}
       </p>
     </footer>

@@ -4,6 +4,7 @@
 export const artist = {
   name: "Matty J. Ruys",
   location: "Melbourne, AU",
+  email: "hiruys@me.com",
 };
 
 export const socials = [
@@ -102,9 +103,43 @@ export const galleryImages = [
 
 type MerchItem = {
   name: string;
-  price: string;
+  price?: string;
   image: string;
   url: string;
 };
 
-export const merch: MerchItem[] = [];
+export const merch: MerchItem[] = [
+  {
+    name: "Beautiful Mess — Vinyl (Preorder)",
+    image: "/vinyl.jpeg",
+    url: "https://happyvalleyshop.com/collections/vinyl-pre-orders/products/ruys-mattyj-beautiful-mess-red-vinyl", // paste the real preorder link
+  },
+];
+
+export const bio = `
+Award-winning, New Zealand Soul-R&B pioneer Matty J Ruys long-awaited return with new music that critics call "a masterwork", "a hell of a record" and "a smouldering classic", and it's easy to hear why. Collaborating with US multi platinum-certified Producer NUMONICS (Marlon Craft, Freddie Gibbs, Blu), and recorded in L.A., Texas & Melbourne, BEAUTIFUL MESS is both urgent and timeless in its execution and themes. Soulfully delivered with an indie hip hop aesthetic, guests include Matthew "Honeybee" Little (Kendrick Lamar, J. Cole, Musiq Soulchild, Kali Uchis, Anderson .Paak), Fuego Hendrixxx A.K.A. 7Hoodies, Diana Wuli, and Island Record's signee Ben Swissa.
+
+Featuring the pre-release singles: BLACK JESUS, SOMETHING GOOD, IT'S OKAY, I'M NOT OKAY Part 1, and SAME SUN.
+
+It may have been 3 decades since he last released a solo album, but there's been a lot of music made in-between. From a label deal with Universal Music that garnered 5 weeks at number one with its very first release (Dei Hamo), to breaking chart records in his homeland by writing and producing the first female artist to have 4 Top 20 hits from a debut album (K'Lee). He also discovered, developed, and signed Brooke Fraser to Sony Music; whose debut album achieved 7 x platinum in her native country.
+
+Ruys' influence and musicality has shaped many a music career. As Universal Music A&R he worked on the careers of Bleeders, Elemeno P, and Zed. Ruys also produced American soul artist Gabriel Powell's debut album 'Albany', which USA Today described as "tastefully supportive arrangements with Strings-drenched pop" and "a truly pleasant surprise". And he made albums with his award-nominated band GO STOP GO, and as a member of the seminal urban Pacific soul group Fuemana.
+
+Ruys (pronounced "Rise") has continued to perform as a recording artist, lending his voice and songwriting to many music projects. You can hear his work on legendary hip hop grammy-winners Arrested Development, New York based synth-wave outfit Diamond Field, downtempo darlings Strawpeople, and Estonia's celebrated indie electro-rock act I Wear* Experiment, to name a few.
+
+Matty has also spent the last 12 years curating Asia's premiere Music Festival, Music Matters Live, as a part of the regions' biggest entertainment conference; All That Matters, bringing in emerging artists from all around the world to the gateway event. He also acts as Academy organiser.
+`;
+
+export const tracklist = [
+  "Self Love",
+  'Same Sun (feat. Matthew "Honeybee" Little)',
+  "Black Jesus",
+  "Faded",
+  "Beautiful Mess",
+  "Gotta Go",
+  "Alright?",
+  "It's Okay, I'm Not Okay Part 1 (feat. Fuego Hendrixxx A.K.A. 7Hoodies)",
+  "It's Okay, I'm Not Okay Part 2 (feat. Diana Wuli)",
+  "Something Good",
+  "Be Love",
+];
