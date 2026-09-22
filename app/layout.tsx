@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { artist } from "@/data/site-content";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: artist.name,
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
