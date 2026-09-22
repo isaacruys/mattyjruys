@@ -11,7 +11,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <nav className="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-ink/10">
+    <nav className="sticky top-0 z-50">
       <ul className="flex flex-wrap gap-x-6 gap-y-2 px-6 py-4 text-sm uppercase tracking-wide">
         {links.map((link) => (
           <li key={link.href}>

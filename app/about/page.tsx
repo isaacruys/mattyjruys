@@ -27,7 +27,7 @@ export default function About() {
           />
         </div>
 
-        <div className="space-y-6 text-ink/80 leading-relaxed mb-16">
+        <div className="space-y-6 text-ink leading-relaxed mb-16">
           {paragraphs.map((paragraph, i) => (
             <p key={i}>{paragraph.trim()}</p>
           ))}

@@ -33,7 +33,7 @@ export default function Merch() {
                 rel="noopener noreferrer"
                 className="group w-full max-w-xs text-left"
               >
-                <div className="relative aspect-square mb-3 bg-ink/5 flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-square mb-3 flex items-center justify-center overflow-hidden">
                   {item.image && (
                     <Image
                       src={item.image}
