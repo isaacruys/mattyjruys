@@ -60,8 +60,10 @@ specialProjects: { year: string; artist: string; title: string; role: string }[]
 type MerchItem = { name: string; price?: string; details?: string; status?: string; image: string; url: string; cta?: string }
 merch: MerchItem[]  // empty = Merch.tsx shows a "Vinyl Soon" teaser instead
 
-type VideoItem = { title: string; embedUrl: string }
-videos: VideoItem[]  // empty = Videos.tsx renders nothing
+type VideoItem = { title: string; artist?: string; youtubeId: string }
+videos: VideoItem[]  // array order = display order: latest release (Black Jesus) first, then by YouTube views.
+                     // Official videos only (no lyric-video duplicates, fan re-uploads, or Topic audio);
+                     // Go Stop Go + features get `artist`. Empty = Videos.tsx renders nothing
 
 galleryImages: string[]  // imported from data/gallery.json (see Adding Gallery Photos); empty = Gallery.tsx renders nothing
 
@@ -85,7 +87,7 @@ tracklist: string[] // Beautiful Mess tracklist, used on /about
 - `Music.tsx` — homepage hero: split-screen (image one side, big stacked type other side), parallax scroll on the cover image, glitch title
 - `RecentReleases.tsx` — alternating left/right editorial release list, reads `recentReleases`
 - `Tour.tsx` — currently static "Coming soon", not reading `tourDates` (see above)
-- `Videos.tsx` — horizontal snap-scroll carousel with counter + progress dots, reads `videos`
+- `Videos.tsx` — horizontal snap-scroll carousel with counter + progress dots (synced on swipe too), reads `videos`. Cards are YouTube thumbnails with a play button; the real iframe (youtube-nocookie, autoplay) only loads on click — don't switch back to 15 eager iframes, it's ~1MB of player JS each.
 - `Merch.tsx` — "Store": each `merch` item is a large feature row (product image left, status/name/details/price/CTA right, links out to the shop). Sits right after the Music hero so the vinyl pre-order is seen early. Product images should be transparent PNGs (see `/vinyl.png`) — a white-background product shot looks pasted-on against the dark site. Stays on the homepage until there are several products; then consider a `/store` page. Empty `merch` = "Vinyl Soon" teaser.
 - `Gallery.tsx` — horizontal filmstrip, natural aspect ratio per image (no cropping — fixed height, auto width)
 - `Footer.tsx` — socials list only (mailing list signup was deliberately removed — no backend to receive it; re-add only if wired to a real ESP like Mailchimp)

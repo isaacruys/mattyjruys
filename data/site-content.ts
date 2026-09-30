@@ -139,27 +139,30 @@ export const recentReleases: ReleaseItem[] = discography.filter(
   (release) => release.onHomepage,
 );
 
-export const videos = [
-  {
-    title: "BLACK JESUS",
-    embedUrl: "https://www.youtube.com/embed/pFPlvsiI7ZI?si=hDECC3AZ6pGGP4Jq", // e.g. https://player.vimeo.com/video/XXXXXXX or YouTube embed URL
-  },
-  {
-    title: "RAINBOWS",
-    embedUrl: "https://www.youtube.com/embed/jFXqf33UuVE?si=CWhxOA-xPL5-8CRy", // e.g. https://player.vimeo.com/video/XXXXXXX or YouTube embed URL
-  },
-  {
-    title: "I LOVE EVERYTHING LITTLE ABOUT YOU (FEAT. LOLE USOALII)",
-    embedUrl: "https://www.youtube.com/embed/qw00dzF-FEA?si=iVEBhPDCUEtIGCJg", // e.g. https://player.vimeo.com/video/XXXXXXX or YouTube embed URL
-  },
-  {
-    title: "CRUISIN'",
-    embedUrl: "https://www.youtube.com/embed/hvJZTUhQQPg?si=D7Hi2zKKtdThcf_a", // e.g. https://player.vimeo.com/video/XXXXXXX or YouTube embed URL
-  },
-  {
-    title: "COLOUR B.L.I.N.D.",
-    embedUrl: "https://www.youtube.com/embed/YhMW3bWPdRg?si=JvZAdukAwUxGokjb", // e.g. https://player.vimeo.com/video/XXXXXXX or YouTube embed URL
-  },
+type VideoItem = {
+  title: string;
+  artist?: string; // shown under the title when it isn't a Matty J. Ruys video
+  youtubeId: string; // the part after "watch?v=" in the YouTube URL
+};
+
+// Order = display order. Latest release (Black Jesus) first, then by YouTube view count
+// (counts as of Sept 2026 — re-sort occasionally if you care).
+export const videos: VideoItem[] = [
+  { title: "Black Jesus", youtubeId: "pFPlvsiI7ZI" }, // latest release — keep first
+  { title: "I Love Every Little Thing About You (feat. Lole Usoalii)", youtubeId: "qw00dzF-FEA" }, // 183K
+  { title: "If You Want It", artist: "Go Stop Go", youtubeId: "LzCikEGobNA" }, // 56K
+  { title: "Breathe Under Water", artist: "Go Stop Go", youtubeId: "k24JDvDUWsw" }, // 38K
+  { title: "Cruisin'", youtubeId: "hvJZTUhQQPg" }, // 32K
+  { title: "Rainbows", youtubeId: "jFXqf33UuVE" }, // 16K
+  { title: "Home", artist: "Go Stop Go", youtubeId: "1SSm2tonvno" }, // 8.1K
+  { title: "Colour B.L.I.N.D.", youtubeId: "YhMW3bWPdRg" }, // 4.4K
+  { title: "Somewhere You're There", youtubeId: "hCQTraAML6w" }, // 3.4K
+  { title: "This City", artist: "Diamond Field feat. Matthew J. Ruys", youtubeId: "U8P5lDOzyV8" }, // 2.6K
+  { title: "Mine", youtubeId: "Fb1vH-ZQKw0" }, // 2.5K
+  { title: "Again", youtubeId: "IGzVkcx01VU" }, // 1.9K
+  { title: "This Love (Lyric Video)", artist: "Go Stop Go", youtubeId: "31-DMCXD2Q8" }, // 390
+  { title: "Mine — The Sequel (feat. Lole Usoalii)", youtubeId: "m3AQlcvP6MQ" }, // 370
+  { title: "Wash Away", artist: "Go Stop Go", youtubeId: "XZOSqXOoONg" }, // 149
 ];
 
 // Gallery order lives in data/gallery.json (updated by `npm run images`).
