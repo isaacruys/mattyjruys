@@ -22,3 +22,5 @@
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# image drop folder (see scripts/add-images.mjs)
+/inbox

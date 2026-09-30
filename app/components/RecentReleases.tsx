@@ -2,20 +2,19 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { discography } from "@/data/site-content";
+import { recentReleases } from "@/data/site-content";
 
-export default function Discography() {
+export default function RecentReleases() {
+  if (recentReleases.length === 0) return null;
+
+  const sorted = [...recentReleases].sort((a, b) =>
+    b.releaseDate.localeCompare(a.releaseDate),
+  );
+
   return (
-    <section id="discography" className="px-6 py-24 max-w-5xl mx-auto">
-      <h2
-        className="font-display text-2xl md:text-3xl mb-16 text-accent glitch-text"
-        data-text="Discography"
-      >
-        Discography
-      </h2>
-
+    <section className="px-6 py-24 max-w-5xl mx-auto">
       <div className="space-y-16 md:space-y-24">
-        {discography.map((release, i) => {
+        {sorted.map((release, i) => {
           const reverse = i % 2 === 1;
           return (
             <motion.div
@@ -32,7 +31,7 @@ export default function Discography() {
                 <div className="relative w-full md:w-2/5 aspect-square flex-shrink-0">
                   <Image
                     src={release.coverImage}
-                    alt={release.title}
+                    alt={`${release.title} cover art`}
                     fill
                     className="object-cover"
                   />
@@ -41,14 +40,14 @@ export default function Discography() {
 
               <div className={`flex-1 ${reverse ? "md:text-right" : ""}`}>
                 <p className="text-xs uppercase tracking-widest text-ink/50 mb-2">
-                  {release.year} {release.label && `· ${release.label}`}
+                  {release.releaseDate.slice(0, 4)} · {release.type}
                 </p>
                 <h3 className="font-display text-3xl md:text-4xl mb-6">
                   {release.title}
                 </h3>
-                {release.hyperfollowUrl && (
+                {release.listenUrl && (
                   <a
-                    href={release.hyperfollowUrl}
+                    href={release.listenUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 text-sm uppercase tracking-widest text-ink hover:text-accent transition-colors"

@@ -3,6 +3,19 @@ import { artist, bio, tracklist } from "@/data/site-content";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
+// Turns **name** in the bio into bold text.
+function renderBold(text: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-semibold text-ink">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default function About() {
   const paragraphs = bio.trim().split("\n\n").filter(Boolean);
 
@@ -29,7 +42,7 @@ export default function About() {
 
         <div className="space-y-6 text-ink leading-relaxed mb-16">
           {paragraphs.map((paragraph, i) => (
-            <p key={i}>{paragraph.trim()}</p>
+            <p key={i}>{renderBold(paragraph.trim())}</p>
           ))}
         </div>
 

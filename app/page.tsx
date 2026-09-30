@@ -1,9 +1,9 @@
 import Nav from "./components/Nav";
 import Countdown from "./components/Countdown";
 import ListeningParty from "./components/ListeningParty";
-import FeaturedRelease from "./components/FeaturedRelease";
+import Music from "./components/Music";
+import RecentReleases from "./components/RecentReleases";
 import Tour from "./components/Tour";
-import Discography from "./components/Discography";
 import Videos from "./components/Videos";
 import Merch from "./components/Merch";
 import Gallery from "./components/Gallery";
@@ -15,11 +15,11 @@ export default function Home() {
       <Nav />
       <Countdown />
       <ListeningParty />
-      <FeaturedRelease />
-      <Tour />
-      <Discography />
-      <Videos />
+      <Music />
       <Merch />
+      <RecentReleases />
+      <Tour />
+      <Videos />
       <Gallery />
       <Footer />
     </main>

@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { featuredRelease, artist } from "@/data/site-content";
+import { featuredRelease } from "@/data/site-content";
 
-export default function FeaturedRelease() {
+export default function Music() {
   return (
     <section
-      id="release"
+      id="music"
       className="min-h-screen flex flex-col md:flex-row items-stretch pt-20"
     >
       <motion.div

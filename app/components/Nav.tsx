@@ -1,9 +1,9 @@
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/#release", label: "Music" },
+  { href: "/#music", label: "Music" },
   { href: "/#tour", label: "Tour" },
-  { href: "/#discography", label: "Discography" },
+  { href: "/discography", label: "Discography" },
   { href: "/#videos", label: "Videos" },
   { href: "/#merch", label: "Store" },
   { href: "/#gallery", label: "Gallery" },
