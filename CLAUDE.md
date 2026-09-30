@@ -61,7 +61,7 @@ type MerchItem = { name: string; price?: string; details?: string; status?: stri
 merch: MerchItem[]  // empty = Merch.tsx shows a "Vinyl Soon" teaser instead
 
 type VideoItem = { title: string; artist?: string; youtubeId: string }
-videos: VideoItem[]  // array order = display order: latest release (Black Jesus) first, then by YouTube views.
+videos: VideoItem[]  // array order = display order: Matty's videos in the artist's chosen order, then Go Stop Go / features last.
                      // Official videos only (no lyric-video duplicates, fan re-uploads, or Topic audio);
                      // Go Stop Go + features get `artist`. Empty = Videos.tsx renders nothing
 

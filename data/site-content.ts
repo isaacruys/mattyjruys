@@ -145,24 +145,24 @@ type VideoItem = {
   youtubeId: string; // the part after "watch?v=" in the YouTube URL
 };
 
-// Order = display order. Latest release (Black Jesus) first, then by YouTube view count
-// (counts as of Sept 2026 — re-sort occasionally if you care).
+// Order = display order: Matty's videos in the artist's chosen order,
+// then Go Stop Go / features at the end.
 export const videos: VideoItem[] = [
-  { title: "Black Jesus", youtubeId: "pFPlvsiI7ZI" }, // latest release — keep first
-  { title: "I Love Every Little Thing About You (feat. Lole Usoalii)", youtubeId: "qw00dzF-FEA" }, // 183K
-  { title: "If You Want It", artist: "Go Stop Go", youtubeId: "LzCikEGobNA" }, // 56K
-  { title: "Breathe Under Water", artist: "Go Stop Go", youtubeId: "k24JDvDUWsw" }, // 38K
-  { title: "Cruisin'", youtubeId: "hvJZTUhQQPg" }, // 32K
-  { title: "Rainbows", youtubeId: "jFXqf33UuVE" }, // 16K
-  { title: "Home", artist: "Go Stop Go", youtubeId: "1SSm2tonvno" }, // 8.1K
-  { title: "Colour B.L.I.N.D.", youtubeId: "YhMW3bWPdRg" }, // 4.4K
-  { title: "Somewhere You're There", youtubeId: "hCQTraAML6w" }, // 3.4K
-  { title: "This City", artist: "Diamond Field feat. Matthew J. Ruys", youtubeId: "U8P5lDOzyV8" }, // 2.6K
-  { title: "Mine", youtubeId: "Fb1vH-ZQKw0" }, // 2.5K
-  { title: "Again", youtubeId: "IGzVkcx01VU" }, // 1.9K
-  { title: "This Love (Lyric Video)", artist: "Go Stop Go", youtubeId: "31-DMCXD2Q8" }, // 390
-  { title: "Mine — The Sequel (feat. Lole Usoalii)", youtubeId: "m3AQlcvP6MQ" }, // 370
-  { title: "Wash Away", artist: "Go Stop Go", youtubeId: "XZOSqXOoONg" }, // 149
+  { title: "Black Jesus", youtubeId: "pFPlvsiI7ZI" },
+  { title: "Rainbows", youtubeId: "jFXqf33UuVE" },
+  { title: "I Love Every Little Thing About You (feat. Lole Usoalii)", youtubeId: "qw00dzF-FEA" },
+  { title: "Cruisin'", youtubeId: "hvJZTUhQQPg" },
+  { title: "Again", youtubeId: "IGzVkcx01VU" },
+  { title: "Mine", youtubeId: "Fb1vH-ZQKw0" },
+  { title: "Mine — The Sequel (feat. Lole Usoalii)", youtubeId: "m3AQlcvP6MQ" },
+  { title: "Colour B.L.I.N.D.", youtubeId: "YhMW3bWPdRg" },
+  // Go Stop Go + features
+  { title: "If You Want It", artist: "Go Stop Go", youtubeId: "LzCikEGobNA" },
+  { title: "Breathe Under Water", artist: "Go Stop Go", youtubeId: "k24JDvDUWsw" },
+  { title: "Home", artist: "Go Stop Go", youtubeId: "1SSm2tonvno" },
+  { title: "This Love (Lyric Video)", artist: "Go Stop Go", youtubeId: "31-DMCXD2Q8" },
+  { title: "Wash Away", artist: "Go Stop Go", youtubeId: "XZOSqXOoONg" },
+  { title: "This City", artist: "Diamond Field feat. Matthew J. Ruys", youtubeId: "U8P5lDOzyV8" },
 ];
 
 // Gallery order lives in data/gallery.json (updated by `npm run images`).

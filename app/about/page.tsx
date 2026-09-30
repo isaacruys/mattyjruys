@@ -34,8 +34,10 @@ export default function About() {
           <Image
             src="/about.jpeg"
             alt={artist.name}
-            width={1200}
-            height={1500}
+            width={3022}
+            height={1686}
+            sizes="(min-width: 768px) 768px, 100vw"
+            priority
             className="w-full h-auto"
           />
         </div>
