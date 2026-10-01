@@ -54,8 +54,10 @@ recentReleases: ReleaseItem[]  // derived: discography.filter(r => r.onHomepage)
 
 specialProjects: { year: string; artist: string; title: string; role: string }[]
 // Matty's credits on other artists' records (writing, production, vocals, bands).
-// Rendered on /discography below the releases, sorted by year. Keep `role` short —
-// just what he did. Sourced from Discogs (artist 293550) + streaming credits.
+// Rendered on /discography below the releases, sorted by year; hidden when empty.
+// CURRENTLY EMPTY: the Discogs-sourced list was removed because the artist said some
+// of it was inaccurate. Only add credits the user/artist has confirmed — don't
+// re-scrape Discogs to repopulate it.
 
 type MerchItem = { name: string; price?: string; details?: string; status?: string; image: string; url: string; cta?: string }
 merch: MerchItem[]  // empty = Merch.tsx shows a "Vinyl Soon" teaser instead

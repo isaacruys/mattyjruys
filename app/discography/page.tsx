@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: `Discography — ${artist.name}`,
-  description: `Releases and special projects from ${artist.name}.`,
+  description: `Releases from ${artist.name}.`,
 };
 
 function ReleaseRow({ release }: { release: ReleaseItem }) {

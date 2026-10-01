@@ -200,7 +200,7 @@ It may have been 3 decades since he last released a solo album, but there's been
 
 Ruys' influence and musicality has shaped many a music career. As Universal Music A&R he worked on the careers of **Bleeders**, **Elemeno P**, and **Zed**. Ruys also produced American soul artist **Gabriel Powell**'s debut album 'Albany', which USA Today described as "tastefully supportive arrangements with Strings-drenched pop" and "a truly pleasant surprise". And he made albums with his award-nominated band **GO STOP GO**, and as a member of the seminal urban Pacific soul group **Fuemana**.
 
-Ruys (pronounced “Rise”) has continued to perform as a recording artist, lending his voice and songwriting to many music projects. He spent The later part of the nineties in Atlanta Georgia writing and recording with **Gerald “G” Jackson** (**Isaac Hayes**’ Music Director) and **Allen “Grip” Smith** (**Keith Sweat**, **TLC**, **S.O.S. Band**, **SWV**, **Dru Hill**). He even performed with **Dungeon Family** & **Outkast**’s recording/touring band. You can also hear Matty’s work on legendary hip hop grammy-winners **Arrested Development**, New York based synth-wave outfit **Diamond Field**, downtempo darlings **Strawpeople**, Australian multigenre bass music purveyor **Drop Frame**, and Estonia’s celebrated indie electro-rock act **I Wear* Experiment**, to name a few.
+Ruys (pronounced “Rise”) has continued to perform as a recording artist, lending his voice and songwriting to many music projects. He spent the later part of the nineties in Atlanta Georgia writing and recording with **Gerald “G” Jackson** (**Isaac Hayes**’ Music Director) and **Allen “Grip” Smith** (**Keith Sweat**, **TLC**, **S.O.S. Band**, **SWV**, **Dru Hill**). He even performed with **Dungeon Family** & **Outkast**’s recording/touring band. You can also hear Matty’s work on legendary hip hop grammy-winners **Arrested Development**, New York based synth-wave outfit **Diamond Field**, downtempo darlings **Strawpeople**, Australian multigenre bass music purveyor **Drop Frame**, and Estonia’s celebrated indie electro-rock act **I Wear* Experiment**, to name a few.
 
 Matty has also spent the last 12 years curating Asia's premiere Music Festival, Music Matters Live, as a part of the regions' biggest entertainment conference; All That Matters, bringing in emerging artists from all around the world to the gateway event. He also acts as Academy organiser.
 `;
@@ -226,29 +226,7 @@ type SpecialProject = {
   role: string; // what Matty did on it
 };
 
-// Credits on other artists' records, sourced from Discogs / streaming credits.
-// Sorted by year on /discography, so order here doesn't matter.
-export const specialProjects: SpecialProject[] = [
-  { year: "1991", artist: "Houseparty", title: "Dangerous Love", role: "Band member, writer" },
-  { year: "1992", artist: "Strawpeople", title: "Worldservice", role: "Vocals on \"Cruelty\", backing vocals" },
-  { year: "1994", artist: "Fuemana", title: "New Urban Polynesian", role: "Band member, lead vocals, rap, co-producer" },
-  { year: "2001", artist: "K'Lee", title: "1+1+1 (It Ain't Two)", role: "Writer, producer, arranger, backing vocals" },
-  { year: "2001", artist: "K'Lee", title: "Broken Wings", role: "Producer, arranger, backing vocals" },
-  { year: "2002", artist: "K'Lee", title: "Can You Feel Me?", role: "Producer, arranger" },
-  { year: "2002", artist: "K'Lee", title: "A Lifetime Left To Wait", role: "Writer, backing vocals" },
-  { year: "2002", artist: "K'Lee", title: "K'Lee", role: "Producer, featured on \"The Honeymoon Suite\"" },
-  { year: "2003", artist: "Brooke Fraser", title: "What To Do With Daylight", role: "Discovered & signed to Sony Music, backing vocals" },
-  { year: "2003", artist: "Elemeno P", title: "Love & Disrespect", role: "Backing vocals" },
-  { year: "2004", artist: "Dei Hamo", title: "We Gon Ride", role: "Executive producer, A&R, additional vocals" },
-  { year: "2005", artist: "Dei Hamo", title: "To Tha Floor!", role: "Writer, executive producer, additional vocals" },
-  { year: "2005", artist: "Dei Hamo", title: "This Is My Life", role: "Writer, remix producer" },
-  { year: "2005", artist: "Elemeno P", title: "Burn", role: "Additional vocals" },
-  { year: "2006", artist: "Elemeno P", title: "One Left Standing", role: "Additional vocals" },
-  { year: "2009", artist: "Haylee Fisher", title: "High", role: "Co-writer" },
-  { year: "2012", artist: "Greg Fleming And The Trains", title: "More Time", role: "Backing vocals" },
-  { year: "2014", artist: "Drop Frame", title: "Gumby", role: "Featured vocals" },
-  { year: "2015", artist: "Diamond Field", title: "This City", role: "Vocals, writer" },
-  { year: "2021", artist: "Diamond Field", title: "Diamond Field", role: "Lead vocals & lyrics on \"Bring Back Love\" and \"Out Here For Love\"" },
-  { year: "2022", artist: "I Wear* Experiment", title: "Discontent", role: "Vocals & lyrics on \"Utopia\", vocals on \"Tiptoe\", co-producer" },
-  { year: "2023", artist: "Arrested Development", title: "Hard In The Paint", role: "Featured vocals" },
-];
+// Credits on other artists' records. Currently empty (section hidden) — the
+// previous Discogs-sourced list had inaccuracies. Only add entries the artist
+// has confirmed. Sorted by year on /discography, so order here doesn't matter.
+export const specialProjects: SpecialProject[] = [];
