@@ -50,7 +50,7 @@ export default function About() {
 
         <div>
           <h2 className="font-display text-xl md:text-2xl mb-6 text-accent">
-            Tracklist — Beautiful Mess
+            Tracklist — BEAUTIFUL MESS
           </h2>
           <ol className="space-y-2">
             {tracklist.map((track, i) => (

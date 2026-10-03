@@ -180,7 +180,7 @@ type MerchItem = {
 
 export const merch: MerchItem[] = [
   {
-    name: "Beautiful Mess — Limited Edition Red Vinyl",
+    name: "BEAUTIFUL MESS — Limited Edition Red Vinyl",
     price: "$60 AUD",
     details: "180 gram red vinyl · Released 6 November 2026",
     status: "Pre-order",
@@ -204,7 +204,7 @@ Ruys' influence and musicality has shaped many a music career. As Universal Musi
 
 Ruys (pronounced “Rise”) has continued to perform as a recording artist, lending his voice and songwriting to many music projects. He spent the later part of the nineties in Atlanta Georgia writing and recording with **Gerald “G” Jackson** (**Isaac Hayes**’ Music Director) and **Allen “Grip” Smith** (**Keith Sweat**, **TLC**, **S.O.S. Band**, **SWV**, **Dru Hill**). He even performed with **Dungeon Family** & **Outkast**’s recording/touring band. You can also hear Matty’s work on legendary hip hop grammy-winners **Arrested Development**, New York based synth-wave outfit **Diamond Field**, downtempo darlings **Strawpeople**, Australian multigenre bass music purveyor **Drop Frame**, and Estonia’s celebrated indie electro-rock act **I Wear* Experiment**, to name a few.
 
-Matty has also spent the last 12 years curating Asia's premiere Music Festival, Music Matters Live, as a part of the regions' biggest entertainment conference; All That Matters, bringing in emerging artists from all around the world to the gateway event. He also acts as Academy organiser.
+Matty has also spent the last 12 years curating Asia's premiere Music Festival, MUSIC MATTERS LIVE, as a part of the regions' biggest entertainment conference; All That Matters, bringing in emerging artists from all around the world to the gateway event. He also acts as Academy organiser.
 `;
 
 export const tracklist = [
