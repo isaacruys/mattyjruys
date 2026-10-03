@@ -192,7 +192,9 @@ export const merch: MerchItem[] = [
 
 // Wrap names in **double asterisks** to make them bold on the About page.
 export const bio = `
-Award-winning, New Zealand Soul-R&B pioneer **Matty J Ruys** long-awaited return with new music that critics call "a masterwork", "a hell of a record" and "a smouldering classic", and it's easy to hear why. Collaborating with US multi platinum-certified Producer **NUMONICS** (**Marlon Craft**, **Freddie Gibbs**, **Blu**), and recorded in L.A., Texas & Melbourne, BEAUTIFUL MESS is both urgent and timeless in its execution and themes. Soulfully delivered with an indie hip hop aesthetic, guests include **Matthew "Honeybee" Little** (**Kendrick Lamar**, **J. Cole**, **Musiq Soulchild**, **Kali Uchis**, **Anderson .Paak**), **Fuego Hendrixxx A.K.A. 7Hoodies**, **Diana Wuli**, and Island Record's signee **Ben Swissa**.
+Award-winning, New Zealand Soul-R&B pioneer **Matty J Ruys** long-awaited return has critics calling his new music “a masterwork”, “a hell of a record” and “a smouldering classic”, and it’s easy to hear why. BEAUTIFUL MESS is Matty creatively expressing himself with absolute freedom, and without the restrictions of outside opinion or control.
+
+Collaborating with US multi platinum-certified Producer **NUMONICS** (**Marlon Craft**, **Freddie Gibbs**, **Blu**), and recorded in L.A., Texas & Melbourne, the album is both urgent and timeless in its execution and themes. Soulfully delivered with an indie hip hop aesthetic, guests include **Matthew “Honeybee” Little** (**Kendrick Lamar**, **J. Cole**, **Musiq Soulchild**, **Kali Uchis**, **Anderson .Paak**), **Fuego Hendrixxx A.K.A. 7Hoodies**, **Diana Wuli**, and Island Record’s signee **Ben Swissa**.
 
 Featuring the pre-release singles: BLACK JESUS, SOMETHING GOOD, IT'S OKAY, I'M NOT OKAY Part 1, and SAME SUN.
 
