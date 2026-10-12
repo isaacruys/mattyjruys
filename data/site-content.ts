@@ -102,7 +102,8 @@ export const discography: ReleaseItem[] = [
     type: "Single",
     releaseDate: "2026-04-03",
     coverImage: "/blackjesus.jpeg",
-    listenUrl: "https://distrokid.com/hyperfollow/mattyjruys/black-jesus?ref=release",
+    listenUrl:
+      "https://distrokid.com/hyperfollow/mattyjruys/black-jesus?ref=release",
     onHomepage: true,
   },
   {
@@ -111,7 +112,8 @@ export const discography: ReleaseItem[] = [
     type: "Single",
     releaseDate: "2026-05-15",
     coverImage: "/somethinggood.jpeg",
-    listenUrl: "https://distrokid.com/hyperfollow/mattyjruys/something-good?ref=release",
+    listenUrl:
+      "https://distrokid.com/hyperfollow/mattyjruys/something-good?ref=release",
     onHomepage: true,
   },
   {
@@ -150,7 +152,10 @@ type VideoItem = {
 export const videos: VideoItem[] = [
   { title: "Black Jesus", youtubeId: "pFPlvsiI7ZI" },
   { title: "Rainbows", youtubeId: "jFXqf33UuVE" },
-  { title: "I Love Every Little Thing About You (feat. Lole Usoalii)", youtubeId: "qw00dzF-FEA" },
+  {
+    title: "I Love Every Little Thing About You (feat. Lole Usoalii)",
+    youtubeId: "qw00dzF-FEA",
+  },
   { title: "Cruisin'", youtubeId: "hvJZTUhQQPg" },
   { title: "Again", youtubeId: "IGzVkcx01VU" },
   { title: "Mine", youtubeId: "Fb1vH-ZQKw0" },
@@ -158,11 +163,23 @@ export const videos: VideoItem[] = [
   { title: "Colour B.L.I.N.D.", youtubeId: "YhMW3bWPdRg" },
   // Go Stop Go + features
   { title: "If You Want It", artist: "Go Stop Go", youtubeId: "LzCikEGobNA" },
-  { title: "Breathe Under Water", artist: "Go Stop Go", youtubeId: "k24JDvDUWsw" },
+  {
+    title: "Breathe Under Water",
+    artist: "Go Stop Go",
+    youtubeId: "k24JDvDUWsw",
+  },
   { title: "Home", artist: "Go Stop Go", youtubeId: "1SSm2tonvno" },
-  { title: "This Love (Lyric Video)", artist: "Go Stop Go", youtubeId: "31-DMCXD2Q8" },
+  {
+    title: "This Love (Lyric Video)",
+    artist: "Go Stop Go",
+    youtubeId: "31-DMCXD2Q8",
+  },
   { title: "Wash Away", artist: "Go Stop Go", youtubeId: "XZOSqXOoONg" },
-  { title: "This City", artist: "Diamond Field feat. Matthew J. Ruys", youtubeId: "U8P5lDOzyV8" },
+  {
+    title: "This City",
+    artist: "Diamond Field feat. Matthew J. Ruys",
+    youtubeId: "U8P5lDOzyV8",
+  },
 ];
 
 // Gallery order lives in data/gallery.json (updated by `npm run images`).
@@ -192,7 +209,7 @@ export const merch: MerchItem[] = [
 
 // Wrap names in **double asterisks** to make them bold on the About page.
 export const bio = `
-Award-winning, New Zealand Soul-R&B pioneer **Matty J Ruys** long-awaited return has critics calling his new music “a masterwork”, “a hell of a record” and “a smouldering classic”, and it’s easy to hear why. BEAUTIFUL MESS is Matty creatively expressing himself with absolute freedom, and without the restrictions of outside opinion or control.
+Award-winning, New Zealand Soul-R&B pioneer **Matty J Ruys'** long-awaited return has critics calling his new music “a masterwork”, “a hell of a record” and “a smouldering classic”, and it’s easy to hear why. BEAUTIFUL MESS is Matty creatively expressing himself with absolute freedom, and without the restrictions of outside opinion or control.
 
 Collaborating with US multi platinum-certified Producer **NUMONICS** (**Marlon Craft**, **Freddie Gibbs**, **Blu**), and recorded in L.A., Texas & Melbourne, the album is both urgent and timeless in its execution and themes. Soulfully delivered with an indie hip hop aesthetic, guests include **Matthew “Honeybee” Little** (**Kendrick Lamar**, **J. Cole**, **Musiq Soulchild**, **Kali Uchis**, **Anderson .Paak**), **Fuego Hendrixxx A.K.A. 7Hoodies**, **Diana Wuli**, and Island Record’s signee **Ben Swissa**.
 
@@ -202,7 +219,7 @@ It may have been 3 decades since he last released a solo album, but there's been
 
 Ruys' influence and musicality has shaped many a music career. As Universal Music A&R he worked on the careers of **Bleeders**, **Elemeno P**, and **Zed**. Ruys also produced American soul artist **Gabriel Powell**'s debut album 'Albany', which USA Today described as "tastefully supportive arrangements with Strings-drenched pop" and "a truly pleasant surprise". And he made albums with his award-nominated band **GO STOP GO**, and as a member of the seminal urban Pacific soul group **Fuemana**.
 
-Ruys (pronounced “Rise”) has continued to perform as a recording artist, lending his voice and songwriting to many music projects. He spent the later part of the nineties in Atlanta Georgia writing and recording with **Gerald “G” Jackson** (**Isaac Hayes**’ Music Director) and **Allen “Grip” Smith** (**Keith Sweat**, **TLC**, **S.O.S. Band**, **SWV**, **Dru Hill**). He even performed with **Dungeon Family** & **Outkast**’s recording/touring band. You can also hear Matty’s work on legendary hip hop grammy-winners **Arrested Development**, New York based synth-wave outfit **Diamond Field**, downtempo darlings **Strawpeople**, Australian multigenre bass music purveyor **Drop Frame**, and Estonia’s celebrated indie electro-rock act **I Wear* Experiment**, to name a few.
+Ruys (pronounced “Rise”) has continued to perform as a recording artist, lending his voice and songwriting to many music projects. He spent the later part of the nineties in Atlanta Georgia writing and recording with **Gerald “G” Jackson** (**Isaac Hayes**’ Music Director) and **Allen “Grip” Smith** (**Keith Sweat**, **TLC**, **S.O.S. Band**, **SWV**, **Dru Hill**). He performed with **Dungeon Family** & **Outkast**’s recording/touring band. You can also hear Matty’s work on legendary hip hop grammy-winners **Arrested Development**, New York based synth-wave outfit **Diamond Field**, downtempo darlings **Strawpeople**, Australian multigenre bass music purveyor **Drop Frame**, and Estonia’s celebrated indie electro-rock act **I Wear* Experiment**, to name a few.
 
 Matty has also spent the last 12 years curating Asia's premiere Music Festival, MUSIC MATTERS LIVE, as a part of the regions' biggest entertainment conference; All That Matters, bringing in emerging artists from all around the world to the gateway event. He also acts as Academy organiser.
 `;
