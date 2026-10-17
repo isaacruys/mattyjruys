@@ -224,18 +224,18 @@ Ruys (pronounced “Rise”) has continued to perform as a recording artist, len
 Matty has also spent the last 12 years curating Asia's premiere Music Festival, MUSIC MATTERS LIVE, as a part of the regions' biggest entertainment conference; All That Matters, bringing in emerging artists from all around the world to the gateway event. He also acts as Academy organiser.
 `;
 
-export const tracklist = [
-  "Self Love",
-  'Same Sun (feat. Matthew "Honeybee" Little)',
-  "Black Jesus",
-  "Faded",
-  "Beautiful Mess",
-  "Gotta Go",
-  "Alright?",
-  "It's Okay, I'm Not Okay Part 1 (feat. Fuego Hendrixxx A.K.A. 7Hoodies)",
-  "It's Okay, I'm Not Okay Part 2 (feat. Diana Wuli)",
-  "Something Good",
-  "Be Love",
+export const tracklist: string[] = [
+  "SELF LOVE",
+  'SAME SUN (feat. MATTHEW "HONEYBEE" LITTLE)',
+  "BLACK JESUS",
+  "FADED (feat. ICECOLDBISHOP)",
+  "BEAUTIFUL MESS",
+  "GOTTA GO",
+  "ALRIGHT?",
+  "IT'S OKAY, I'M NOT OKAY PART 1 (feat. FUEGO HENDRIXXX A.K.A. 7HOODIES)",
+  "IT'S OKAY, I'M NOT OKAY PART 2 (feat. DIANA WULI)",
+  "SOMETHING GOOD",
+  "BE LOVE",
 ];
 
 type SpecialProject = {
