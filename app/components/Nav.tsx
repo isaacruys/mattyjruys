@@ -7,6 +7,7 @@ const links = [
   { href: "/#videos", label: "Videos" },
   { href: "/#merch", label: "Store" },
   { href: "/#gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {

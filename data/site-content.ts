@@ -73,12 +73,50 @@ export type ReleaseItem = {
   // a move to a new platform), otherwise Spotify (or Apple Music
   // if it isn't on Spotify). Leave "" to hide the Listen link.
   listenUrl: string;
+  role?: string; // what Matty did, for releases by other artists, e.g. "Writer & Producer"
   onHomepage?: boolean; // show in the homepage "recent releases" list
 };
 
 // Every major release, any order — the pages sort by releaseDate.
-// Remixes and radio edits are deliberately left out.
+// Includes the remixes the artist supplied artwork for; other remixes/radio edits are left out.
 export const discography: ReleaseItem[] = [
+  // 90s singles only have a year, so entries sharing a year keep this array's
+  // order (sort is stable): Can't Call That Home → Somewhere You're There → Mine
+  // → DEEPER → Cruisin' (Cruisin' came after the album; the others before it),
+  // then I Love Every Little Thing About You (1996).
+  {
+    title: "NEW URBAN POLYNESIAN",
+    credit: "Fuemana",
+    role: "Band member",
+    type: "Album",
+    releaseDate: "1994",
+    coverImage: "/fuemana-newurbanpolynesian.jpeg",
+    listenUrl: "https://open.spotify.com/album/3lfhG4qhTU0ibbY2PVFWOi",
+  },
+  {
+    title: "CAN'T CALL THAT HOME",
+    credit: "Matty J",
+    type: "Single",
+    releaseDate: "1994",
+    coverImage: "/cantcallthathome.jpeg",
+    listenUrl: "", // not on streaming
+  },
+  {
+    title: "SOMEWHERE YOU'RE THERE (feat. THE MADD COCONUT)",
+    credit: "Matty J",
+    type: "Single",
+    releaseDate: "1994",
+    coverImage: "/somewhereyouarethere.jpeg",
+    listenUrl: "https://open.spotify.com/track/6eVUQ9XYJHs5YVtAtnzMhP",
+  },
+  {
+    title: "MINE",
+    credit: "Matty J. Ruys",
+    type: "Single",
+    releaseDate: "1995",
+    coverImage: "/mine.jpeg",
+    listenUrl: "https://open.spotify.com/track/23zAIsWD9C5vWeTcGMQD7U",
+  },
   {
     title: "DEEPER",
     credit: "Matty J. Ruys",
@@ -86,6 +124,22 @@ export const discography: ReleaseItem[] = [
     releaseDate: "1995",
     coverImage: "/deeper.jpeg",
     listenUrl: "https://open.spotify.com/album/3iVVSyrBnJsdsZqgFmgNdV",
+  },
+  {
+    title: "CRUISIN'",
+    credit: "Matty J. Ruys",
+    type: "Single",
+    releaseDate: "1995",
+    coverImage: "/cruisin.jpeg",
+    listenUrl: "https://open.spotify.com/track/1thtctqUkKmV60CAqbK3Gn",
+  },
+  {
+    title: "I LOVE EVERY LITTLE THING ABOUT YOU (feat. LOLÉ)",
+    credit: "Matty J. Ruys",
+    type: "Single",
+    releaseDate: "1996",
+    coverImage: "/iloveeverylittlething.jpeg",
+    listenUrl: "https://open.spotify.com/track/1OHlONc1D0TIge7RrfKOn4",
   },
   {
     title: "PEOPLE X PEOPLE (feat. SPEECH)",
@@ -103,6 +157,32 @@ export const discography: ReleaseItem[] = [
     coverImage: "/rainbows.jpeg",
     // Not on Spotify — Apple Music only.
     listenUrl: "https://music.apple.com/us/album/rainbows-single/1476093161",
+  },
+  {
+    title: "PEOPLE X PEOPLE (feat. SPEECH) [UNDER THE GUN REMIX]",
+    credit: "Matthew J. Ruys",
+    type: "Single",
+    releaseDate: "2019-06-14",
+    coverImage: "/peoplexpeople-underthegun.jpeg",
+    listenUrl:
+      "https://music.apple.com/us/album/people-x-people-feat-speech-under-the-gun-remix-single/1467026203",
+  },
+  {
+    title: "RAINBOWS (SAI REMIX)",
+    credit: "Matthew J. Ruys",
+    type: "Single",
+    releaseDate: "2019-12-20",
+    coverImage: "/rainbows-sai.jpeg",
+    listenUrl: "https://music.apple.com/us/album/rainbows-sai-remix-single/1490309261",
+  },
+  {
+    title: "K'LEE",
+    credit: "K'Lee",
+    role: "Writer & Producer",
+    type: "Album",
+    releaseDate: "2002",
+    coverImage: "/klee.jpeg",
+    listenUrl: "https://open.spotify.com/album/4qQsNgxMKH0i9jSsGu2B0S",
   },
   {
     title: "GO STOP GO",

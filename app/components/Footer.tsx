@@ -3,7 +3,6 @@ import { artist, socials } from "@/data/site-content";
 export default function Footer() {
   return (
     <footer
-      id="contact"
       className="px-6 py-24 max-w-4xl mx-auto border-t border-ink/10"
     >
       <div className="flex justify-end">
@@ -23,9 +22,20 @@ export default function Footer() {
         </nav>
       </div>
 
-      <p className="mt-16 text-xs uppercase tracking-widest text-ink/60 text-right">
-        {artist.location} · {new Date().getFullYear()} © {artist.name}
-      </p>
+      <div className="mt-16 flex flex-col-reverse gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <p className="text-xs uppercase tracking-widest text-ink/60">
+          {artist.location} · {new Date().getFullYear()} © {artist.name}
+        </p>
+        <a
+          href="/contact"
+          className="group inline-flex items-center gap-3 text-sm uppercase tracking-widest text-ink hover:text-accent transition-colors"
+        >
+          Get in touch
+          <span aria-hidden className="transition-transform group-hover:translate-x-1">
+            →
+          </span>
+        </a>
+      </div>
     </footer>
   );
 }

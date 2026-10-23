@@ -12,7 +12,7 @@ Official website for Matty J Ruys, NZ Soul-R&B artist. Current album focus: **Be
 - **GitHub** — repo `isaacruys/mattyjruys`, branch `main` (only branch — `master` was deleted after a history rewrite)
 - Domain: `mattyjruys.com`, registered via Squarespace, DNS pointed at Vercel
 
-No CMS, no database. All content is static, editable through one file.
+No CMS, no database. All content is static, editable through one file. The one server-side piece is the contact form endpoint (`app/api/contact/route.ts`).
 
 ## Architecture
 
@@ -48,6 +48,7 @@ type ReleaseItem = {
   releaseDate: string;  // "YYYY-MM-DD" or "YYYY"; pages sort on this string
   coverImage: string;
   listenUrl: string;    // HyperFollow if it exists, else Spotify, else Apple Music; "" hides the link
+  role?: string;        // what Matty did on another artist's record (e.g. "Writer & Producer"); shown after the credit tag
   onHomepage?: boolean;
 }
 discography: ReleaseItem[]     // THE master list of major releases (no remixes/radio edits).
@@ -81,7 +82,8 @@ tracklist: string[] // Beautiful Mess tracklist, used on /about
 
 - `app/page.tsx` — homepage: Nav → Countdown → ListeningParty → Music → Merch → RecentReleases → Tour → Videos → Gallery → Footer
 - `app/about/page.tsx` — bio + tracklist
-- `app/discography/page.tsx` — single chronological `discography` list (releases under other names — Matthew J. Ruys, Go Stop Go — get a small credit tag, not a separate section), then `specialProjects` as a compact year/artist/title/role list.
+- `app/contact/page.tsx` — Nav + `Contact` form + Footer
+- `app/discography/page.tsx` — `discography` as a cover grid (2 / 3 / 4 columns on phone / tablet / desktop), oldest first reading left to right. Each card: cover (links to `listenUrl`), year · type, title, then a credit/role byline for releases under other names or by other artists. Covers are `object-contain` on a faint square so non-square CD scans aren't cropped. Then `specialProjects` (hidden while empty).
 
 ### Components (`app/components/`)
 
@@ -94,7 +96,8 @@ tracklist: string[] // Beautiful Mess tracklist, used on /about
 - `Videos.tsx` — horizontal snap-scroll carousel with counter + progress dots (synced on swipe too), reads `videos`. Cards are YouTube thumbnails with a play button; the real iframe (youtube-nocookie, autoplay) only loads on click — don't switch back to 15 eager iframes, it's ~1MB of player JS each.
 - `Merch.tsx` — "Store": each `merch` item is a large feature row (product image left, status/name/details/price/CTA right, links out to the shop). Sits right after the Music hero so the vinyl pre-order is seen early. Product images should be transparent PNGs (see `/vinyl.png`) — a white-background product shot looks pasted-on against the dark site. Stays on the homepage until there are several products; then consider a `/store` page. Empty `merch` = "Vinyl Soon" teaser.
 - `Gallery.tsx` — horizontal filmstrip, natural aspect ratio per image (no cropping — fixed height, auto width) Rendered black & white via CSS `grayscale` to match the album art — no colour-on-hover (the user found it flickered) — source files stay in colour, so don't convert them.
-- `Footer.tsx` — socials list only (mailing list signup was deliberately removed — no backend to receive it; re-add only if wired to a real ESP like Mailchimp)
+- `Contact.tsx` — the form on its own `/contact` page (`app/contact/page.tsx`, own metadata, in the nav as "Contact"; footer has a "Get in touch →" link to it). Kept off the homepage on purpose so it has a shareable URL for bookers/press. Name / email / topic / message form that POSTs to `/api/contact`, which emails it to Matty via Resend's REST API (no SDK). Matty's address is **only** in the `CONTACT_TO_EMAIL` env var — never put it in code or `site-content.ts` output. Needs `RESEND_API_KEY` (Sending access) + `CONTACT_TO_EMAIL` in Vercel env vars (and `.env.local` for local dev). Sender is `onboarding@resend.dev`, which only delivers to the Resend account owner (the account was created with Matty's address); verify mattyjruys.com in Resend to send from the domain. Spam protection: hidden honeypot field, 3-second minimum fill time, best-effort per-IP rate limit (5 per 10 min). Replies go straight to the sender via `reply_to`.
+- `Footer.tsx` — socials list only (the contact form lives in `Contact.tsx`; a mailing-list signup was deliberately removed — re-add only if wired to a real ESP like Mailchimp)
 - `FixedBackground.tsx` — sitewide fixed/blurred/darkened background image behind all content, rendered once in `app/layout.tsx`
 
 ### Removed / not currently in use (don't reintroduce without reason)

@@ -14,40 +14,66 @@ export const metadata: Metadata = {
   description: `Releases from ${artist.name}.`,
 };
 
-function ReleaseRow({ release }: { release: ReleaseItem }) {
-  return (
-    <div className="flex flex-col md:flex-row items-center gap-8">
+function ReleaseCard({ release }: { release: ReleaseItem }) {
+  const byline = [
+    release.credit !== artist.name ? release.credit : null,
+    release.role ?? null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  const cover = (
+    <div className="relative aspect-square bg-ink/5 overflow-hidden">
       {release.coverImage && (
-        <div className="relative w-full md:w-2/5 aspect-square flex-shrink-0">
-          <Image
-            src={release.coverImage}
-            alt={`${release.title} cover art`}
-            fill
-            sizes="(min-width: 768px) 40vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <Image
+          src={release.coverImage}
+          alt={`${release.title} cover art`}
+          fill
+          sizes="(min-width: 1024px) 280px, (min-width: 768px) 33vw, 50vw"
+          className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+        />
       )}
-      <div className="flex-1">
-        <p className="text-xs uppercase tracking-widest text-ink/50 mb-2">
-          {release.releaseDate.slice(0, 4)} · {release.type}
-          {release.credit !== artist.name && ` · ${release.credit}`}
-        </p>
-        <h3 className="font-display text-3xl md:text-4xl mb-6">
-          {release.title}
-        </h3>
-        {release.listenUrl && (
-          <a
-            href={release.listenUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-sm uppercase tracking-widest text-ink hover:text-accent transition-colors"
-          >
-            Listen <span aria-hidden>→</span>
-          </a>
-        )}
-      </div>
     </div>
+  );
+
+  return (
+    <article className="group">
+      {release.listenUrl ? (
+        <a
+          href={release.listenUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Listen to ${release.title}`}
+          className="block"
+        >
+          {cover}
+        </a>
+      ) : (
+        cover
+      )}
+      <p className="text-[10px] md:text-xs uppercase tracking-widest text-ink/50 mt-3 mb-1">
+        {release.releaseDate.slice(0, 4)} · {release.type}
+      </p>
+      <h3 className="font-display text-sm md:text-base uppercase leading-snug">
+        {release.title}
+      </h3>
+      {byline && (
+        <p className="text-[10px] md:text-xs uppercase tracking-widest text-ink/50 mt-1">
+          {byline}
+        </p>
+      )}
+      {release.listenUrl && (
+        <a
+          href={release.listenUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          tabIndex={-1}
+          className="inline-flex items-center gap-2 mt-2 text-[10px] md:text-xs uppercase tracking-widest text-ink/70 hover:text-accent transition-colors"
+        >
+          Listen <span aria-hidden>→</span>
+        </a>
+      )}
+    </article>
   );
 }
 
@@ -62,7 +88,7 @@ export default function DiscographyPage() {
   return (
     <main>
       <Nav />
-      <section className="px-6 pt-32 pb-16 max-w-3xl mx-auto">
+      <section className="px-6 pt-32 pb-16 max-w-6xl mx-auto">
         <h1
           className="font-display text-3xl md:text-5xl mb-16 text-accent glitch-text"
           data-text="Discography"
@@ -75,9 +101,10 @@ export default function DiscographyPage() {
             Coming soon
           </p>
         ) : (
-          <div className="space-y-16">
+          // Cover grid, oldest first reading left to right
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-8 md:gap-y-14">
             {releases.map((release) => (
-              <ReleaseRow key={release.title} release={release} />
+              <ReleaseCard key={release.title} release={release} />
             ))}
           </div>
         )}
