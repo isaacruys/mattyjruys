@@ -185,6 +185,25 @@ export const discography: ReleaseItem[] = [
     listenUrl: "https://open.spotify.com/album/4qQsNgxMKH0i9jSsGu2B0S",
   },
   {
+    title: "FIRST EDITION",
+    credit: "Dei Hamo",
+    role: "Executive Producer, Producer & Label Owner",
+    type: "Album",
+    releaseDate: "2004-07-12",
+    coverImage: "/deihamo-firstedition.jpeg",
+    listenUrl: "https://open.spotify.com/album/0bHUIeLMXflpMIGT8LJIJq",
+  },
+  {
+    title: "ALBANY",
+    credit: "Gabriel",
+    role: "Producer & Arranger",
+    type: "Album",
+    releaseDate: "2007-09-25",
+    coverImage: "/gabriel-albany.jpeg",
+    // Not on Spotify
+    listenUrl: "https://music.apple.com/us/album/albany/265110481",
+  },
+  {
     title: "GO STOP GO",
     credit: "Go Stop Go",
     type: "Album",
