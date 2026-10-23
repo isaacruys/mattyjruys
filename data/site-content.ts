@@ -173,7 +173,8 @@ export const discography: ReleaseItem[] = [
     type: "Single",
     releaseDate: "2019-12-20",
     coverImage: "/rainbows-sai.jpeg",
-    listenUrl: "https://music.apple.com/us/album/rainbows-sai-remix-single/1490309261",
+    listenUrl:
+      "https://music.apple.com/us/album/rainbows-sai-remix-single/1490309261",
   },
   {
     title: "K'LEE",
@@ -313,7 +314,7 @@ export const merch: MerchItem[] = [
     name: "BEAUTIFUL MESS — Limited Edition Red Vinyl",
     price: "$60 AUD",
     details: "180 gram red vinyl · Released 6 November 2026",
-    status: "Pre-order",
+    status: "Happy Valley AU Pre-order",
     image: "/vinyl.png",
     url: "https://happyvalleyshop.com/collections/vinyl-pre-orders/products/ruys-mattyj-beautiful-mess-red-vinyl",
     cta: "Pre-order",
