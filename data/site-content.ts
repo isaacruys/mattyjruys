@@ -19,6 +19,10 @@ export const socials = [
     label: "Apple Music",
     url: "https://music.apple.com/au/artist/matty-j-ruys/1737335151",
   },
+  {
+    label: "Amazon Music",
+    url: "https://music.amazon.com.au/artists/B00CN47WM0/matty-j-ruys",
+  },
   { label: "Deezer", url: "https://www.deezer.com/us/artist/4732822" },
   { label: "YouTube", url: "https://www.youtube.com/@mattyjruys" },
 ];
