@@ -27,6 +27,8 @@ artist: { name: string; location: string }
 
 socials: { label: string; url: string }[]
 
+album: { title: string; presaveUrl: string }  // presave link under the homepage countdown
+
 featuredRelease: {
   title: string;
   releaseDate: string;
@@ -84,14 +86,14 @@ tracklist: string[] // Beautiful Mess tracklist, used on /about
 ### Components (`app/components/`)
 
 - `Nav.tsx` — fixed header, full-screen overlay menu (Framer `AnimatePresence`), links to `/`, `/about`, `/#music`, `/#tour`, `/discography`, `/#videos`, `/#merch`, `/#gallery`. Anchor links use `/#section` (not bare `#section`) so they work correctly from non-homepage pages.
-- `Countdown.tsx` — large centered live countdown to Nov 6, 2026, glitch effect re-triggers every digit change via `key={...}` remount trick
+- `Countdown.tsx` — large centered live countdown to Nov 6, 2026, glitch effect re-triggers every digit change via `key={...}` remount trick. Shows a "Presave Album Now →" link (`album.presaveUrl`) underneath, which disappears automatically when the countdown reaches zero
 - `ListeningParty.tsx` — single flyer image rendered at its intrinsic size (`width`/`height` + `w-full h-auto`), never `fill` + `object-cover`, which cropped it
 - `Music.tsx` — homepage hero: split-screen (image one side, big stacked type other side), parallax scroll on the cover image, glitch title
 - `RecentReleases.tsx` — alternating left/right editorial release list, reads `recentReleases`
 - `Tour.tsx` — currently static "Coming soon", not reading `tourDates` (see above)
 - `Videos.tsx` — horizontal snap-scroll carousel with counter + progress dots (synced on swipe too), reads `videos`. Cards are YouTube thumbnails with a play button; the real iframe (youtube-nocookie, autoplay) only loads on click — don't switch back to 15 eager iframes, it's ~1MB of player JS each.
 - `Merch.tsx` — "Store": each `merch` item is a large feature row (product image left, status/name/details/price/CTA right, links out to the shop). Sits right after the Music hero so the vinyl pre-order is seen early. Product images should be transparent PNGs (see `/vinyl.png`) — a white-background product shot looks pasted-on against the dark site. Stays on the homepage until there are several products; then consider a `/store` page. Empty `merch` = "Vinyl Soon" teaser.
-- `Gallery.tsx` — horizontal filmstrip, natural aspect ratio per image (no cropping — fixed height, auto width)
+- `Gallery.tsx` — horizontal filmstrip, natural aspect ratio per image (no cropping — fixed height, auto width) Rendered black & white via CSS `grayscale` to match the album art — no colour-on-hover (the user found it flickered) — source files stay in colour, so don't convert them.
 - `Footer.tsx` — socials list only (mailing list signup was deliberately removed — no backend to receive it; re-add only if wired to a real ESP like Mailchimp)
 - `FixedBackground.tsx` — sitewide fixed/blurred/darkened background image behind all content, rendered once in `app/layout.tsx`
 
@@ -113,6 +115,7 @@ colors: {
 }
 ```
 
+- `public/background.jpeg` is deliberately small (1400px, ~75KB) since it's blurred + darkened; don't replace it with a full-res photo. `app/icon.png` is 256px for the same reason.
 - Background: fixed, blurred (`blur(8px)`), darkened (`brightness(0.5)`) version of the album photography, with a `bg-paper/50` overlay on top — see `FixedBackground.tsx`. When blurring any background image, always pair with `transform: scale(1.05)` to hide the blurred edge artifact.
 - Headings use `.glitch-text` (RGB-split flicker, defined in `globals.css`) with a `data-text` attribute matching the visible text — required for the CSS `content: attr(data-text)` trick to work.
 - Countdown-style digits use `.countdown-glitch`, a related but separate class/animation for numbers that need to re-glitch on every value change (paired with `key={value}` to force remount).
@@ -137,6 +140,8 @@ colors: {
 - HEIC is converted via macOS `sips` (sharp's prebuilt binaries can't decode it), so the script's HEIC support is Mac-only.
 
 ## Streaming / Release Links
+
+> **Oct 2026:** all DistroKid HyperFollow links were removed from the site (`listenUrl: ""` on the 2026 singles, which hides their Listen links) because distribution is moving to a new platform. Don't re-add distrokid.com links — use the new platform's links once the user provides them.
 
 - Distribution is via **DistroKid**. DistroKid has **no embeddable player** — the only public-facing link is a **HyperFollow** page (`distrokid.com/hyperfollow/...`), which is a link-out landing page, not an embed.
 - Convention: every release entry stores a `listenUrl` (HyperFollow when one exists; older releases predate HyperFollow and use Spotify, or Apple Music if not on Spotify), rendered as a "Listen →" link that opens in a new tab. Do not attempt to iframe-embed a HyperFollow URL — it won't render as a player.

@@ -58,7 +58,7 @@ export default function About() {
                 key={track}
                 className="flex gap-4 text-sm border-b border-ink/10 pb-2"
               >
-                <span className="text-ink/40 tabular-nums w-6">
+                <span className="text-ink/60 tabular-nums w-6">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span>{track}</span>

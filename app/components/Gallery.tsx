@@ -57,9 +57,12 @@ export default function Gallery() {
               alt=""
               width={0}
               height={0}
-              sizes="100vw"
+              // Images are shown at a fixed 288/384px height, so they never need full-screen width
+              sizes="(min-width: 768px) 60vw, 90vw"
               style={{ width: "auto", height: "100%" }}
-              className="object-contain"
+              // Black & white to match the album art (no colour-on-hover — it flickered).
+              // The files themselves stay in colour — remove `grayscale` to undo.
+              className="object-contain grayscale"
             />
           </div>
         ))}

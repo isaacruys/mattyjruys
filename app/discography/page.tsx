@@ -94,13 +94,13 @@ export default function DiscographyPage() {
                 key={`${project.artist}-${project.title}`}
                 className="flex gap-4 md:gap-6 border-b border-ink/10 py-4"
               >
-                <span className="text-sm text-ink/40 tabular-nums w-10 flex-shrink-0">
+                <span className="text-sm text-ink/60 tabular-nums w-10 flex-shrink-0">
                   {project.year}
                 </span>
                 <div>
                   <p className="text-sm md:text-base">
                     <span className="font-semibold">{project.artist}</span>
-                    <span className="text-ink/40"> — </span>
+                    <span className="text-ink/60"> — </span>
                     {project.title}
                   </p>
                   <p className="text-xs uppercase tracking-widest text-ink/50 mt-1">

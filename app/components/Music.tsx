@@ -26,14 +26,16 @@ export default function Music() {
       </motion.div>
 
       <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-12 py-12">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-xs uppercase tracking-widest text-ink/50 mb-4"
-        >
-          {featuredRelease.releaseDate}
-        </motion.p>
+        {featuredRelease.releaseDate && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-xs uppercase tracking-widest text-ink/50 mb-4"
+          >
+            {featuredRelease.releaseDate}
+          </motion.p>
+        )}
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -45,18 +47,30 @@ export default function Music() {
           {featuredRelease.title}
         </motion.h1>
 
-        <motion.a
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          whileHover={{ x: 8 }}
-          href={featuredRelease.streamUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 text-sm uppercase tracking-widest text-ink hover:text-accent transition-colors w-fit"
-        >
-          Listen Now <span aria-hidden>→</span>
-        </motion.a>
+        {featuredRelease.streamUrl ? (
+          <motion.a
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            whileHover={{ x: 8 }}
+            href={featuredRelease.streamUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-sm uppercase tracking-widest text-ink hover:text-accent transition-colors w-fit"
+          >
+            {featuredRelease.ctaLabel ?? "Listen Now"}{" "}
+            <span aria-hidden>→</span>
+          </motion.a>
+        ) : (
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-sm uppercase tracking-widest text-ink/70"
+          >
+            {featuredRelease.ctaLabel}
+          </motion.p>
+        )}
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ export default function Footer() {
         </nav>
       </div>
 
-      <p className="mt-16 text-xs uppercase tracking-widest text-ink/40 text-right">
+      <p className="mt-16 text-xs uppercase tracking-widest text-ink/60 text-right">
         {artist.location} · {new Date().getFullYear()} © {artist.name}
       </p>
     </footer>

@@ -23,12 +23,27 @@ export const socials = [
   { label: "YouTube", url: "https://www.youtube.com/@mattyjruys" },
 ];
 
-export const featuredRelease = {
-  title: "SAME SUN (feat. MATTHEW LITTLE)",
-  releaseDate: "11 September 2026",
-  coverImage: "/samesun.jpeg", // put an image in /public
-  streamUrl:
-    "https://distrokid.com/hyperfollow/mattyjruys/same-sun-feat-matthew-little-radio-edit-2?ref=release", // pre-save/smart-link service
+export const album = {
+  title: "BEAUTIFUL MESS",
+  // Pre-save link shown under the homepage countdown (hidden once the countdown ends).
+  presaveUrl: "https://precise.fm/beautifulmess",
+};
+
+// Homepage hero (Music.tsx).
+export const featuredRelease: {
+  title: string;
+  releaseDate: string; // shown above the title; leave "" to hide
+  coverImage: string;
+  streamUrl: string; // leave "" to show ctaLabel as plain text instead of a link
+  ctaLabel?: string; // link text, defaults to "Listen Now"
+} = {
+  title: "FADED (feat. ICECOLDBISHOP)",
+  releaseDate: "", // TODO: add once confirmed
+  coverImage: "/faded.jpeg",
+  // No link yet — add the FADED link here and change ctaLabel to
+  // "Listen Now" (or delete it) once it's out.
+  streamUrl: "",
+  ctaLabel: "Coming November 6",
 };
 
 type Show = {
@@ -54,7 +69,8 @@ export type ReleaseItem = {
   type: "Album" | "EP" | "Single";
   releaseDate: string; // "YYYY-MM-DD", or just "YYYY" if the exact day isn't known
   coverImage: string;
-  // HyperFollow link if the release has one, otherwise Spotify (or Apple Music
+  // Smart link for the release (DistroKid HyperFollow links were removed ahead of
+  // a move to a new platform), otherwise Spotify (or Apple Music
   // if it isn't on Spotify). Leave "" to hide the Listen link.
   listenUrl: string;
   onHomepage?: boolean; // show in the homepage "recent releases" list
@@ -102,8 +118,7 @@ export const discography: ReleaseItem[] = [
     type: "Single",
     releaseDate: "2026-04-03",
     coverImage: "/blackjesus.jpeg",
-    listenUrl:
-      "https://distrokid.com/hyperfollow/mattyjruys/black-jesus?ref=release",
+    listenUrl: "", // DistroKid link removed — add the new platform link here
     onHomepage: true,
   },
   {
@@ -112,8 +127,7 @@ export const discography: ReleaseItem[] = [
     type: "Single",
     releaseDate: "2026-05-15",
     coverImage: "/somethinggood.jpeg",
-    listenUrl:
-      "https://distrokid.com/hyperfollow/mattyjruys/something-good?ref=release",
+    listenUrl: "", // DistroKid link removed — add the new platform link here
     onHomepage: true,
   },
   {
@@ -122,8 +136,7 @@ export const discography: ReleaseItem[] = [
     type: "Single",
     releaseDate: "2026-07-10",
     coverImage: "/itsokayimnotokaypt1.jpeg",
-    listenUrl:
-      "https://distrokid.com/hyperfollow/mattyjruys/its-okay-im-not-okay-part-1-feat-7hoodies",
+    listenUrl: "", // DistroKid link removed — add the new platform link here
     onHomepage: true,
   },
   {
@@ -132,8 +145,9 @@ export const discography: ReleaseItem[] = [
     type: "Single",
     releaseDate: "2026-09-11",
     coverImage: "/samesun.jpeg",
-    listenUrl:
-      "https://distrokid.com/hyperfollow/mattyjruys/same-sun-feat-matthew-little-radio-edit-2?ref=release",
+    listenUrl: "", // DistroKid link removed — add the new platform link here
+
+    onHomepage: true,
   },
 ];
 

@@ -11,6 +11,7 @@ export default function ListeningParty() {
           width={1447}
           height={2048}
           sizes="(min-width: 640px) 384px, 100vw"
+          priority
           className="w-full h-auto"
         />
       </div>

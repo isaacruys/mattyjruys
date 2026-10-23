@@ -60,7 +60,7 @@ export default function Videos() {
           Videos
         </h2>
         <div className="flex items-center gap-4">
-          <span className="text-xs uppercase tracking-widest text-ink/40 font-display">
+          <span className="text-xs uppercase tracking-widest text-ink/60 font-display">
             {String(activeIndex + 1).padStart(2, "0")} /{" "}
             {String(videos.length).padStart(2, "0")}
           </span>
@@ -148,7 +148,7 @@ export default function Videos() {
                   </p>
                 )}
               </div>
-              <span className="text-xs text-ink/40 font-display">
+              <span className="text-xs text-ink/60 font-display">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </div>
