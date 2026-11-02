@@ -82,6 +82,17 @@ export default function Merch() {
                 >
                   {item.cta ?? "Buy"} <span aria-hidden>→</span>
                 </a>
+                {item.secondaryUrl && (
+                  <a
+                    href={item.secondaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 flex w-fit items-center gap-2 text-xs uppercase tracking-widest text-ink/60 hover:text-accent transition-colors"
+                  >
+                    {item.secondaryCta ?? "Also available here"}{" "}
+                    <span aria-hidden>→</span>
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

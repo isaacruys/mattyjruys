@@ -24,6 +24,7 @@ export const socials = [
     url: "https://music.amazon.com.au/artists/B00CN47WM0/matty-j-ruys",
   },
   { label: "Deezer", url: "https://www.deezer.com/us/artist/4732822" },
+  { label: "Bandcamp", url: "https://mattyjruys.bandcamp.com" },
   { label: "YouTube", url: "https://www.youtube.com/@mattyjruys" },
 ];
 
@@ -44,10 +45,10 @@ export const featuredRelease: {
   title: "FADED (feat. ICECOLDBISHOP)",
   releaseDate: "", // TODO: add once confirmed
   coverImage: "/faded.jpeg",
-  // No link yet — add the FADED link here and change ctaLabel to
-  // "Listen Now" (or delete it) once it's out.
-  streamUrl: "",
-  ctaLabel: "Coming November 6",
+  // Presave link until it's out — then swap in the streaming link and change
+  // ctaLabel to "Listen Now" (or delete it).
+  streamUrl: "https://precise.fm/faded",
+  ctaLabel: "Presave FADED",
 };
 
 type Show = {
@@ -311,6 +312,8 @@ type MerchItem = {
   image: string; // transparent PNG looks best on the dark background
   url: string;
   cta?: string; // link text, defaults to "Buy"
+  secondaryUrl?: string; // optional second shop, shown as a smaller link under the main one
+  secondaryCta?: string;
 };
 
 export const merch: MerchItem[] = [
@@ -322,6 +325,8 @@ export const merch: MerchItem[] = [
     image: "/vinyl.png",
     url: "https://happyvalleyshop.com/collections/vinyl-pre-orders/products/ruys-mattyj-beautiful-mess-red-vinyl",
     cta: "Pre-order",
+    secondaryUrl: "https://mattyjruys.bandcamp.com/album/beautiful-mess",
+    secondaryCta: "Or pre-order on Bandcamp — vinyl & digital",
   },
 ];
 
