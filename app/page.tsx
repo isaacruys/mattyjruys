@@ -1,6 +1,5 @@
 import Nav from "./components/Nav";
-import Countdown from "./components/Countdown";
-import ListeningParty from "./components/ListeningParty";
+import OutNow from "./components/OutNow";
 import Music from "./components/Music";
 import RecentReleases from "./components/RecentReleases";
 import Tour from "./components/Tour";
@@ -13,8 +12,7 @@ export default function Home() {
   return (
     <main>
       <Nav />
-      <Countdown />
-      <ListeningParty />
+      <OutNow />
       <Music />
       <Merch />
       <RecentReleases />

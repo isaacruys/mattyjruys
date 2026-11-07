@@ -1,6 +1,6 @@
 # Matty J Ruys — Artist Website
 
-Official website for Matty J Ruys, NZ Soul-R&B artist. Current album focus: **Beautiful Mess** (release Nov 6, 2026). This file is context for Claude Code working in this repo — read it before making changes.
+Official website for Matty J Ruys, NZ Soul-R&B artist. Current album focus: **Beautiful Mess** (released Nov 6, 2026). This file is context for Claude Code working in this repo — read it before making changes.
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ artist: { name: string; location: string }
 
 socials: { label: string; url: string }[]
 
-album: { title: string; presaveUrl: string }  // presave link under the homepage countdown
+album: { title: string; listenUrl: string }  // listen link on the homepage "Out Now" banner
 
 featuredRelease: {
   title: string;
@@ -80,7 +80,7 @@ tracklist: string[] // Beautiful Mess tracklist, used on /about
 
 ### Pages
 
-- `app/page.tsx` — homepage: Nav → Countdown → ListeningParty → Music → Merch → RecentReleases → Tour → Videos → Gallery → Footer
+- `app/page.tsx` — homepage: Nav → OutNow → Music → Merch → RecentReleases → Tour → Videos → Gallery → Footer
 - `app/about/page.tsx` — bio + tracklist
 - `app/contact/page.tsx` — Nav + `Contact` form + Footer
 - `app/discography/page.tsx` — `discography` as a cover grid (2 / 3 / 4 columns on phone / tablet / desktop), oldest first reading left to right. Each card: cover (links to `listenUrl`), year · type, title, then a credit/role byline for releases under other names or by other artists. Covers are `object-contain` on a faint square so non-square CD scans aren't cropped. Then `specialProjects` (hidden while empty).
@@ -88,8 +88,7 @@ tracklist: string[] // Beautiful Mess tracklist, used on /about
 ### Components (`app/components/`)
 
 - `Nav.tsx` — fixed header, full-screen overlay menu (Framer `AnimatePresence`), links to `/`, `/about`, `/#music`, `/#tour`, `/discography`, `/#videos`, `/#merch`, `/#gallery`. Anchor links use `/#section` (not bare `#section`) so they work correctly from non-homepage pages.
-- `Countdown.tsx` — large centered live countdown to Nov 6, 2026, glitch effect re-triggers every digit change via `key={...}` remount trick. Shows a "Presave Album Now →" link (`album.presaveUrl`) underneath, which disappears automatically when the countdown reaches zero
-- `ListeningParty.tsx` — single flyer image rendered at its intrinsic size (`width`/`height` + `w-full h-auto`), never `fill` + `object-cover`, which cropped it
+- `OutNow.tsx` — replaced the release countdown on Nov 7, 2026: "Out Now" label, big glitch album title, and a "Listen To The Album Now →" button (`album.listenUrl`) in the cover-sticker double-frame style
 - `Music.tsx` — homepage hero: split-screen (image one side, big stacked type other side), parallax scroll on the cover image, glitch title
 - `RecentReleases.tsx` — alternating left/right editorial release list, reads `recentReleases`
 - `Tour.tsx` — currently static "Coming soon", not reading `tourDates` (see above)
@@ -102,7 +101,9 @@ tracklist: string[] // Beautiful Mess tracklist, used on /about
 
 ### Removed / not currently in use (don't reintroduce without reason)
 
-- `LiveClock.tsx` — retired in favor of the big `Countdown.tsx`
+- `LiveClock.tsx` — retired in favor of the big countdown
+- `Countdown.tsx` — deleted after the album came out (in git history if a countdown is needed for the next release)
+- `ListeningParty.tsx` — the Nov 5, 2026 launch flyer; taken off the homepage once the event had passed (file kept)
 - `SlashField.tsx` — diagonal slash decorative background (matches the album cover's slash lettering). Built, worked, but was **reverted** as a full-page ambient effect because it looked bad at scale. Could be reintroduced scoped to a single section (not fixed/global) if asked for "flair" again — check with the user on scope before rebuilding it full-page.
 - `AsciiDivider.tsx`, `formatBoldText.tsx`, `getOgImage.ts` — built during exploration, not currently wired into any page. Safe to delete or resurrect depending on what's asked.
 
@@ -133,7 +134,7 @@ colors: {
 - **No album/single cover art in the gallery** — the gallery is for additional photos only. Covers belong on releases (`coverImage`).
 - Gallery specifically preserves each photo's **natural aspect ratio** — fixed height (`h-72 md:h-96`), width auto — rather than forcing a uniform crop shape.
 - Favicon: `app/icon.png` (or `.ico`/`.svg`) — Next.js App Router auto-detects this filename, no manual `<link>` tag needed.
-- Cover art currently reused across multiple placeholders (`/beautiful-mess.jpg` used for the hero, discography entries, and About page portrait) — swap in dedicated images as they become available rather than treating this as permanent.
+- `/beautiful-mess.jpg` is the album cover (1200px, from the Bandcamp page), used by the BEAUTIFUL MESS discography entry.
 
 ### Adding Gallery Photos
 

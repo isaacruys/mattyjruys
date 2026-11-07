@@ -30,8 +30,8 @@ export const socials = [
 
 export const album = {
   title: "BEAUTIFUL MESS",
-  // Pre-save link shown under the homepage countdown (hidden once the countdown ends).
-  presaveUrl: "https://precise.fm/beautifulmess",
+  // Listen link on the homepage "Out Now" banner (OutNow.tsx); "" hides the button.
+  listenUrl: "https://precise.fm/beautifulmess",
 };
 
 // Homepage hero (Music.tsx).
@@ -45,10 +45,7 @@ export const featuredRelease: {
   title: "FADED (feat. ICECOLDBISHOP)",
   releaseDate: "", // TODO: add once confirmed
   coverImage: "/faded.jpeg",
-  // Presave link until it's out — then swap in the streaming link and change
-  // ctaLabel to "Listen Now" (or delete it).
   streamUrl: "https://precise.fm/faded",
-  ctaLabel: "Presave FADED",
 };
 
 type Show = {
@@ -254,6 +251,15 @@ export const discography: ReleaseItem[] = [
 
     onHomepage: true,
   },
+  {
+    title: "BEAUTIFUL MESS",
+    credit: "Matty J. Ruys",
+    type: "Album",
+    releaseDate: "2026-11-06",
+    coverImage: "/beautiful-mess.jpg",
+    listenUrl: "https://precise.fm/beautifulmess",
+    onHomepage: true,
+  },
 ];
 
 export const recentReleases: ReleaseItem[] = discography.filter(
@@ -320,13 +326,13 @@ export const merch: MerchItem[] = [
   {
     name: "BEAUTIFUL MESS — Limited Edition Red Vinyl",
     price: "$60 AUD",
-    details: "180 gram red vinyl · Released 6 November 2026",
-    status: "Happy Valley AU Pre-order",
+    details: "180 gram red vinyl · Out now",
+    status: "Happy Valley AU · Out Now",
     image: "/vinyl.png",
-    url: "https://happyvalleyshop.com/collections/vinyl-pre-orders/products/ruys-mattyj-beautiful-mess-red-vinyl",
-    cta: "Pre-order",
+    url: "https://happyvalleyshop.com/products/ruys-mattyj-beautiful-mess-red-vinyl",
+    cta: "Order Now",
     secondaryUrl: "https://mattyjruys.bandcamp.com/album/beautiful-mess",
-    secondaryCta: "Or pre-order on Bandcamp — vinyl & digital",
+    secondaryCta: "Or order on Bandcamp — vinyl & digital",
   },
 ];
 
