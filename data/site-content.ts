@@ -332,7 +332,7 @@ export const merch: MerchItem[] = [
     url: "https://happyvalleyshop.com/products/ruys-mattyj-beautiful-mess-red-vinyl",
     cta: "Order Now",
     secondaryUrl: "https://mattyjruys.bandcamp.com/album/beautiful-mess",
-    secondaryCta: "Or order on Bandcamp — vinyl & digital",
+    secondaryCta: "International order on Bandcamp — vinyl & digital",
   },
 ];
 
